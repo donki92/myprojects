@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="videogamestore.entity.Videogame" table="videogame" catalog="games" optimistic-lock="version">
+        <id name="videogameId" type="java.lang.Integer">
+            <column name="VideogameId" />
+            <generator class="identity" />
+        </id>
+        <property name="gameTitle" type="string">
+            <column name="GameTitle" length="50" not-null="true" />
+        </property>
+        <property name="platform" type="string">
+            <column name="Platform" length="20" not-null="true" />
+        </property>
+        <property name="price" type="java.lang.Double">
+            <column name="Price" precision="22" scale="0" not-null="true" />
+        </property>
+        <property name="publisher" type="string">
+            <column name="Publisher" length="50" not-null="true" />
+        </property>
+        <property name="distributorId" type="java.lang.Integer">
+            <column name="DistributorID" />
+        </property>
+        <property name="esrbrating" type="string">
+            <column name="ESRBRating" length="5" />
+        </property>
+        <property name="quantity" type="java.lang.Integer">
+            <column name="Quantity" />
+        </property>
+        <set name="histories" table="history" inverse="true" lazy="true" fetch="select" >
+            <key>
+                <column name="VideogameId" not-null="true" />
+            </key>
+            <one-to-many class="videogamestore.entity.History" />
+        </set>
+    </class>
+</hibernate-mapping>
