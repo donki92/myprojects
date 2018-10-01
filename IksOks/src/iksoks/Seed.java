@@ -1,7 +1,7 @@
 
 package iksoks;
 /**
- * Enum za polje (iks, oks, prazno)
+ * Enum za ciji je potez (iks, oks, prazno)
  */
 public enum Seed { 
    EMPTY, CROSS, NOUGHT

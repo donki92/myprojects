@@ -5,7 +5,8 @@ package iksoks;
 public class Cell {  
    // package access
    Seed content; // sadrzaj polja prema interfejsu Seed
-                 // moguce vrednosti Seed.EMPTY, Seed.CROSS, or Seed.NOUGHT
+                 // moguce vrednosti Seed.EMPTY, Seed.CROSS, or Seed.NOUGHT, 
+   				 // ko ima seed, taj je na potezu
    int row, col; 
  
    /** Konstruktor za polje*/

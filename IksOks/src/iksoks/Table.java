@@ -53,14 +53,14 @@ public class Table {
       return (cells[currentRow][0].content == theSeed         // 3 po vrsti
                    && cells[currentRow][1].content == theSeed
                    && cells[currentRow][2].content == theSeed
-              || cells[0][currentCol].content == theSeed      // 3 po koloni
+                   || cells[0][currentCol].content == theSeed      // 3 po koloni
                    && cells[1][currentCol].content == theSeed
                    && cells[2][currentCol].content == theSeed
-              || currentRow == currentCol            // 3 po dijagonali
+                   || currentRow == currentCol            // 3 po dijagonali
                    && cells[0][0].content == theSeed
                    && cells[1][1].content == theSeed
                    && cells[2][2].content == theSeed
-              || currentRow + currentCol == 2    // 3-in-the-opposite-diagonal
+                   || currentRow + currentCol == 2    // 3 druga dijagonala
                    && cells[0][2].content == theSeed
                    && cells[1][1].content == theSeed
                    && cells[2][0].content == theSeed);
@@ -69,7 +69,7 @@ public class Table {
    /** Paint itself */
    public void paint() {
       for (int row = 0; row < ROWS; ++row) {
-         for (int col = 0; col < COLS; ++col) {
+         for (int col = 0; col < COLS; col++) {
             cells[row][col].paint();   // svako polje se samo crta
             if (col < COLS - 1) System.out.print("|");
          }
